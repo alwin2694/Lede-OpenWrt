@@ -42,11 +42,12 @@ env:
   SSH_ACTIONS: true
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
-  UPLOAD_Release: true
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
-  TZ: Asia/Shanghai
-  FILE_NAME: lede$x86$64固件
+  UPLOAD_Release: false
+  UPLOAD_Release-Asset: true
+#  TZ: Asia/Shanghai
+  FILE_NAME: lede/x86/64固件
 
 jobs:
   build:
@@ -134,7 +135,7 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
       with:
-        name: OpenWrt_19.07_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        name: OpenWrt_5.4_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: openwrt/bin
 
     - name: 整理固件文件夹
@@ -150,18 +151,9 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: OpenWrt_19.07_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        name: OpenWrt_5.4_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
 
-    - name: Create release
-      if: steps.compile.outputs.status == 'success' && env.UPLOAD_Release == 'true'
-      id: create_release
-      uses: actions/create-release@v1.0.1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ github.ref }}
-        release_name: ${{ github.ref }}
 
     - name: 上传固件到cowtransfer网盘
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_COWTRANSFER == 'true' && !cancelled()
@@ -177,6 +169,29 @@ jobs:
         ./transfer wet -s -p 16 --no-progress ${FIRMWARE} 2>&1 | tee wetransfer.log
         echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
 
-    - name: WeChat notification
+
+    - name: 发布一键编译脚本
+      if: steps.compile.outputs.status == 'success' && env.UPLOAD_Release == 'true'
+      id: create_release
+      uses: actions/create-release@v1.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+
+
+    - name: Upload release asset
+      if: steps.compile.outputs.status == 'success' && env.UPLOAD_Release-Asset == 'true'
+      id: upload-release-asset 
+      uses: actions/upload-release-asset@v1.0.2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./openwrt/bin/targets/*/*
+
+
+    - name: 微信通知
       if: steps.organize.outputs.status == 'success' && !cancelled()
-      run: curl https://sc.ftqq.com/SCU107710Tbb89d4863dca5ebeac474aece6ab8e985f22881499ed6.send?text=${{ env.FILE_NAME }}发布成功-编译结束
+      run: curl https://sc.ftqq.com/SCU107710Tbb89d4863dca5ebeac474aece6ab8e985f22881499ed6.send?text=${{ env.FILE_NAME }}发布成功  编译结束
+
