@@ -8,7 +8,7 @@
 #
 #
 
-name: 19.07-x86-64 固件
+name: lede-x86-64 固件
 
 on:
   repository_dispatch:
@@ -18,7 +18,7 @@ on:
 #    branches:
 #      - master
 #    paths:
-#      - '19.07.config'
+#      - 'x86-64.config'
 
 #release发布触发开始编译
 #  release:
@@ -33,10 +33,10 @@ on:
 #    types: started
 
 env:
-  REPO_URL: https://github.com/Lienol/openwrt
-  REPO_BRANCH: dev-19.07
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: 19.07.config
+  CONFIG_FILE: x86-64.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   SSH_ACTIONS: true
@@ -46,11 +46,11 @@ env:
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
   TZ: Asia/Shanghai
-  FILE_NAME: 19.07$x86$64固件
+  FILE_NAME: lede$x86$64固件
 
 jobs:
   build:
-    name: 编译OpenWrt-19.07固件
+    name: 编译OpenWrt-lede固件
     runs-on: ubuntu-18.04
     if: github.event.repository.owner.id == github.event.sender.id
 
@@ -74,7 +74,7 @@ jobs:
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
 
-    - name: 下载19.07源码
+    - name: 下载lede源码
       working-directory: /workdir
       run: |
         df -hT $PWD
