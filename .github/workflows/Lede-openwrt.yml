@@ -44,7 +44,7 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
-  UPLOAD_Release: false
+  UPLOAD_Release: true
   UPLOAD_Release-Asset: true
   TZ: Asia/Shanghai
   FILE_NAME: lede/x86/64固件
@@ -177,7 +177,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ github.ref }}
+        tag_name: $一键编译脚本
 
 
     - name: Upload release asset
