@@ -7,6 +7,10 @@
 # 有些是一行代码就起作用的，有些是两三行起作用的，我基本都把他们分开了,要他们不起作用就前面都加#,要他们起作用就把前面的#都去掉就行
 
 
+# 修改openwrt登陆地址,把下面的192.168.2.2修改成你想要的就可以了，其他的不要动
+sed -i 's/192.168.1.1/192.168.2.2/g' package/base-files/files/bin/config_generate
+
+
 #修改内核版本（下面两行代码前面没#为4.19内核,有#为5.4内核,只选择带#或者不带#就可以了，不用改动其他）
 sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=4.19/g' ./target/linux/x86/Makefile  #修改内核版本
 sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=4.19/g' ./target/linux/x86/Makefile  #修改内核版本
