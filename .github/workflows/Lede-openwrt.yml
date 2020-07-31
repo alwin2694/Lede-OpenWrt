@@ -56,7 +56,7 @@ jobs:
 
     steps:
     - name: 微信通知
-      run: curl https://sc.ftqq.com/SCU107710Tbb89d4863dca5ebeac474aece6ab8e985f22881499ed6.send?text=${{ env.FILE_NAME }}开始编译
+      run: curl https://sc.ftqq.com/SCU107710Tbb89d4863dca5ebeac474aece6ab8e985f22881499ed6.send?text=${{ env.FILE_NAME }}编译开始
       
     - name: 准备完毕
       uses: actions/checkout@main
