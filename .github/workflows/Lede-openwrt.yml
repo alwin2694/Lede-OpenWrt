@@ -50,13 +50,13 @@ env:
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: diy.config
-  DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
+  DIY_OP_SH: diy-part.sh
   SSH_ACTIONS: true
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
+  UPLOAD_release: true
   TZ: Asia/Shanghai
 
 jobs:
@@ -92,23 +92,20 @@ jobs:
     - name: 加载diy-part1.sh跟feeds.conf.default设置
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
-        chmod +x $DIY_P1_SH
+        chmod +x $DIY_OP_SH
         cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P1_SH
+        $GITHUB_WORKSPACE/$DIY_OP_SH
 
-    - name: 下载diy-part1.sh跟feeds.conf.default自定义软件
+    - name: 下载diy-part.sh跟feeds.conf.default自定义软件
       run: cd openwrt && ./scripts/feeds update -a
 
     - name: 安装自定义软件
       run: cd openwrt && ./scripts/feeds install -a
 
-    - name: 加载diy-part2.sh跟diy.config设置
+    - name: 加载diy.config设置
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x $DIY_P2_SH
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: SSH远程连接服务器配置固件
       uses: P3TERX/debugger-action@main
@@ -178,23 +175,19 @@ jobs:
 
 
     - name: Upload Packages to release
-      if: env.UPLOAD_PACKAGES_DIR == 'true' && env.UPLOAD_TO_REALEASE == 'true' && !cancelled() &&  steps.compile.outputs.status == 'success'
+      if: steps.compile.outputs.status == 'success' && env.UPLOAD_release == 'true'
       uses: svenstaro/upload-release-action@v1-release
       with:
         repo_token: ${{ secrets.SUPER_TOKEN }}
         file: openwrt/bin/${{matrix.target}}_packages.tar
         asset_name: ${{matrix.target}}_packages.tar
         tag: ${{ env.DATE }}
-        overwrite: true
-        file_glob: true
 
     - name: Upload Targets to release
-      if: env.UPLOAD_TARGETS_DIR == 'true' && env.UPLOAD_TO_REALEASE == 'true' && !cancelled() &&  steps.compile.outputs.status == 'success'
+      if: steps.compile.outputs.status == 'success' && env.UPLOAD_release == 'true'
       uses: svenstaro/upload-release-action@v1-release
       with:
         repo_token: ${{ secrets.SUPER_TOKEN }}
         file: openwrt/bin/${{matrix.target}}_targets.tar
         asset_name: ${{matrix.target}}_targets.tar
-        tag: ${{ env.DATE }}
-        overwrite: true
-        file_glob: true
+        tag: ${{ env.FILE_DATE }}
