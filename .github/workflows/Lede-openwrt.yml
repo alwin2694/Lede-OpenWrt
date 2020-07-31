@@ -18,7 +18,7 @@ on:
 #    branches:
 #      - master
 #    paths:
-#      - 'x86-64.config'
+#      - 'diy.config'
 
 #release发布触发开始编译
 #  release:
@@ -31,12 +31,25 @@ on:
 #点星Star触发开始编译
   watch:
 #    types: started
+  
+#说明：
+#REPO_URL: https://github.com/coolsnowwolf/lede（更换链接可以编译不一样大神的固件）
+#REPO_BRANCH: master（这个是跟上面链接相关的,有些大神是有好几个分支的,要写对相应分支才能编译到相应的固件,比如Lienol大神的就有dev-19.07跟dev-master分支,要编译什么固件就要写什么的）
+#FEEDS_CONF: feeds.conf.default（源码自带的自定义增加插件文件,一般用不上在这里自定义插件）
+#CONFIG_FILE: diy.config（固件所有设置和插件都在这里,第一次编译要打开ssh连接服务器自己修改下自己想要的什么样固件,编译完成后文件夹里面带一个.config文件的，把它内容复制到这里,以后编译不修改固件的情况下就可以关闭ssh,达到无人值守自动编译固件了）
+#DIY_P1_SH: diy-part1.sh（自定义增加插件文件,基本整个源代码好多都可以改,只要你会就可以了）
+#DIY_P2_SH: diy-part2.sh（修改登陆IP）
+#SSH_ACTIONS: true（打开或者关闭SSH远程连接服务器修改需要的插件和配置固件，true开,false关）
+#UPLOAD_BIN_DIR: false（打开或者关闭上传整个BIN文件夹到github空,里面包含固件+IPK在里面,跟上传固件二选一即可,true开,false关）
+#UPLOAD_FIRMWARE: true（打开或者关闭上传固件到github空,跟上传BIN文件夹二选一即可,true开,false关）
+#UPLOAD_COWTRANSFER: false（打开或者关闭上传固件到奶牛网盘,true开,false关）
+#UPLOAD_WETRANSFER: false（打开或者关闭上传固件到WETRANSFER网盘,true开,false关）
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: x86-64.config
+  CONFIG_FILE: diy.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   SSH_ACTIONS: true
@@ -44,9 +57,7 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
-  UPLOAD_Release: true
   TZ: Asia/Shanghai
-  FILE_NAME: lede/x86/64固件
 
 jobs:
   build:
@@ -78,20 +89,20 @@ jobs:
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
-    - name: 加载DIY_P1_SH跟FEEDS_CONF设置
+    - name: 加载diy-part1.sh跟feeds.conf.default设置
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
-    - name: 下载自定义软件
+    - name: 下载diy-part1.sh跟feeds.conf.default自定义软件
       run: cd openwrt && ./scripts/feeds update -a
 
     - name: 安装自定义软件
       run: cd openwrt && ./scripts/feeds install -a
 
-    - name: 加载DIY_P2_SH跟CONFIG_FILE设置
+    - name: 加载diy-part2.sh跟diy.config设置
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
@@ -103,7 +114,7 @@ jobs:
       uses: P3TERX/debugger-action@main
       if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
 
-    - name: 下载所有配置软件
+    - name: 下载软件包
       id: package
       run: |
         cd openwrt
@@ -166,15 +177,24 @@ jobs:
         echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
 
 
-    - name: Create release
-      uses: ncipollo/release-action@v1
-      if: steps.compile.outputs.status == 'success' && env.UPLOAD_Release == 'true'
+    - name: Upload Packages to release
+      if: env.UPLOAD_PACKAGES_DIR == 'true' && env.UPLOAD_TO_REALEASE == 'true' && !cancelled() &&  steps.compile.outputs.status == 'success'
+      uses: svenstaro/upload-release-action@v1-release
       with:
-        name: ${{ env.DATE }} 🚀 lede/x86/64固件 | 自动编译
-        allowUpdates: true
-        tag: lede-x86-64 固件
-        commit: master
-        token: ${{ secrets.RELEASES_TOKEN }}
-        body: |
-          ${{ env.useVersionInfo }}
-        artifacts: ${{ env.FIRMWARE }}/*
+        repo_token: ${{ secrets.SUPER_TOKEN }}
+        file: openwrt/bin/${{matrix.target}}_packages.tar
+        asset_name: ${{matrix.target}}_packages.tar
+        tag: ${{ env.DATE }}
+        overwrite: true
+        file_glob: true
+
+    - name: Upload Targets to release
+      if: env.UPLOAD_TARGETS_DIR == 'true' && env.UPLOAD_TO_REALEASE == 'true' && !cancelled() &&  steps.compile.outputs.status == 'success'
+      uses: svenstaro/upload-release-action@v1-release
+      with:
+        repo_token: ${{ secrets.SUPER_TOKEN }}
+        file: openwrt/bin/${{matrix.target}}_targets.tar
+        asset_name: ${{matrix.target}}_targets.tar
+        tag: ${{ env.DATE }}
+        overwrite: true
+        file_glob: true
