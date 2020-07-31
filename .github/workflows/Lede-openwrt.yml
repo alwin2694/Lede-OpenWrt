@@ -158,7 +158,6 @@ jobs:
         name: OpenWrt_5.4_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
 
-
     - name: 上传固件到cowtransfer网盘
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_COWTRANSFER == 'true' && !cancelled()
       run: |
@@ -172,22 +171,3 @@ jobs:
         curl -fsSL git.io/file-transfer | sh
         ./transfer wet -s -p 16 --no-progress ${FIRMWARE} 2>&1 | tee wetransfer.log
         echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
-
-
-    - name: Upload Packages to release
-      if: steps.compile.outputs.status == 'success' && env.UPLOAD_release == 'true'
-      uses: svenstaro/upload-release-action@v1-release
-      with:
-        repo_token: ${{ secrets.SUPER_TOKEN }}
-        file: openwrt/bin/${{matrix.target}}_packages.tar
-        asset_name: ${{matrix.target}}_packages.tar
-        tag: ${{ env.DATE }}
-
-    - name: Upload Targets to release
-      if: steps.compile.outputs.status == 'success' && env.UPLOAD_release == 'true'
-      uses: svenstaro/upload-release-action@v1-release
-      with:
-        repo_token: ${{ secrets.SUPER_TOKEN }}
-        file: openwrt/bin/${{matrix.target}}_targets.tar
-        asset_name: ${{matrix.target}}_targets.tar
-        tag: ${{ env.FILE_DATE }}
