@@ -45,7 +45,6 @@ env:
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
   UPLOAD_Release: true
-  UPLOAD_Release-Asset: true
   TZ: Asia/Shanghai
   FILE_NAME: lede/x86/64固件
 
@@ -170,28 +169,20 @@ jobs:
         echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
 
 
-    - name: 发布一键编译脚本
+    - name: Create release
+      uses: ncipollo/release-action@v1
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_Release == 'true'
-      id: create_release
-      uses: actions/create-release@v1.0.1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: $一键编译脚本
-
-
-    - name: Upload release asset
-      if: steps.compile.outputs.status == 'success' && env.UPLOAD_Release-Asset == 'true'
-      id: upload-release-asset 
-      uses: actions/upload-release-asset@v1.0.2
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./openwrt/bin/targets/*/*
+        name: ${{ env.DATE }} 🚀 lede/x86/64固件 | 自动编译
+        allowUpdates: true
+        tag: lede-x86-64 固件
+        commit: master
+        token: ${{ secrets.RELEASES_TOKEN }}
+        body: |
+          ${{ env.useVersionInfo }}
+        artifacts: ${{ env.FIRMWARE }}/*
 
 
     - name: 微信通知
-      if: steps.organize.outputs.status == 'success' && !cancelled()
-      run: curl https://sc.ftqq.com/SCU107710Tbb89d4863dca5ebeac474aece6ab8e985f22881499ed6.send?text=${{ env.FILE_NAME }}发布成功  编译结束
+      run: curl https://sc.ftqq.com/SCU107710Tbb89d4863dca5ebeac474aece6ab8e985f22881499ed6.send?text=${{ env.FILE_NAME }}编译结束
 
