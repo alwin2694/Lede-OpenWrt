@@ -37,4 +37,4 @@ git clone https://github.com/destan19/OpenAppFilter.git package/luci-app-oaf #�
 #git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash #clash出国软件
 git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns #smartdns DNS加速
 git clone https://github.com/s1oz/luci-app-koolproxyR.git package/luci-app-koolproxyR #广告过滤
-git clone git clone https://github.com/garypang13/luci-app-eqos package/luci-app-eqos #IP地址限速
+git clone https://github.com/garypang13/luci-app-eqos package/luci-app-eqos #IP地址限速
