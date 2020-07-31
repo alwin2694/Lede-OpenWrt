@@ -33,6 +33,6 @@ sed -i '$a src-git clash https://github.com/frainzy1477/luci-app-clash.git' feed
 git clone https://github.com/lariboo/luci-app-control-mia package/luci-app-control-mia #时间控制
 git clone https://github.com/lariboo/luci-app-control-webrestriction package/luci-app-control-webrestriction #访问控制
 git clone https://github.com/lariboo/luci-app-control-weburl package/luci-app-control-weburl #网址过滤
-git clone https://github.com/destan19/OpenAppFilter.git package/luci-app-control-OpenAppFilter #应用过滤
+git clone https://github.com/destan19/OpenAppFilter.git package/luci-app-oaf #应用过滤
 #git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash #clash出国软件
 git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns #smartdns DNS加速
