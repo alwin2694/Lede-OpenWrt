@@ -14,5 +14,5 @@ config interface 'lan'
 	option gateway '192.168.2.1'
 	option delegate '0'
 	option broadcast '192.168.2.255'
-	option dns '114.114.114.114 223.5.5.5'
+	option dns '192.168.2.3'
 
