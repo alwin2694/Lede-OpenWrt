@@ -25,13 +25,14 @@ sed -i 's#rgba(223, 56, 18, 0.04)#rgba(223, 56, 18, 0.02)#g' package/luci-theme-
 
 
 #添加自定义插件链接
+git clone -b lede https://github.com/tano-systems/luci-app-tn-snmpd.git package/luci-app-tn-snmpd #snmpd
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default #passwall出国软件
-#sed -i '$a src-git smartdns https://github.com/pymumu/luci-app-smartdns/tree/lede' feeds.conf.default
+sed -i '$a src-git clash https://github.com/frainzy1477/luci-app-clash.git' feeds.conf.default
 #git clone https://github.com/awesome-openwrt/luci-app-openclash package/luci-app-openclash #openclash出国软件
 #git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan #微信推送信息通知
 git clone https://github.com/lariboo/luci-app-control-mia package/luci-app-control-mia #时间控制
 git clone https://github.com/lariboo/luci-app-control-webrestriction package/luci-app-control-webrestriction #访问控制
 git clone https://github.com/lariboo/luci-app-control-weburl package/luci-app-control-weburl #网址过滤
 git clone https://github.com/destan19/OpenAppFilter.git package/luci-app-control-OpenAppFilter #应用过滤
-git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash #clash出国软件
-git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns #clash出国软件
+#git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash #clash出国软件
+git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns #smartdns DNS加速
