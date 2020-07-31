@@ -10,7 +10,7 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 
-#取消掉feeds.conf.default文件里面的helloworld的#注释,使用ShadowSocksR Plus+出国
+#取消掉feeds.conf.default文件里面的helloworld的#注释,使用ShadowSocksR Plus+出国软件
 sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 
@@ -27,14 +27,13 @@ sed -i 's#rgba(223, 56, 18, 0.04)#rgba(223, 56, 18, 0.02)#g' package/luci-theme-
 #添加自定义插件链接
 git clone -b v1.x https://github.com/tano-systems/luci-app-tn-snmpd.git package/luci-app-tn-snmpd #snmpd
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default #passwall出国软件
-sed -i '$a git clone https://github.com/frainzy1477/luci-app-clash.git package/luci-app-clash' feeds.conf.default
 #git clone https://github.com/awesome-openwrt/luci-app-openclash package/luci-app-openclash #openclash出国软件
+git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash #clash出国软件
 #git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan #微信推送信息通知
 git clone https://github.com/lariboo/luci-app-control-mia package/luci-app-control-mia #时间控制
 git clone https://github.com/lariboo/luci-app-control-webrestriction package/luci-app-control-webrestriction #访问控制
 git clone https://github.com/lariboo/luci-app-control-weburl package/luci-app-control-weburl #网址过滤
 git clone https://github.com/destan19/OpenAppFilter.git package/luci-app-oaf #应用过滤
-#git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash #clash出国软件
-git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns #smartdns DNS加速
 git clone https://github.com/s1oz/luci-app-koolproxyR.git package/luci-app-koolproxyR #广告过滤
-git clone https://github.com/garypang13/luci-app-eqos package/luci-app-eqos #IP地址限速
+git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns #smartdns DNS加速
+#git clone https://github.com/garypang13/luci-app-eqos package/luci-app-eqos #IP地址限速
