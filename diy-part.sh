@@ -34,7 +34,7 @@ sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.
 git clone https://github.com/awesome-openwrt/luci-app-openclash package/luci-app-openclash  #openclash出国软件
 git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash  #clash出国软件
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan  #微信推送信息通知
-#git clone https://github.com/lariboo/luci-app-control-mia package/luci-app-control-mia  #时间控制
+#git clone https://github.com/lariboo/luci-app-control-mia package/luci-app-control-mia  #时间控制或者luci-app-timecontrol
 #git clone https://github.com/lariboo/luci-app-control-webrestriction package/luci-app-control-webrestriction  #访问控制
 #git clone https://github.com/lariboo/luci-app-control-weburl package/luci-app-control-weburl  #网址过滤
 git clone https://github.com/destan19/OpenAppFilter.git package/luci-app-oaf  #应用过滤
