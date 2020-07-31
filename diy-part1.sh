@@ -10,7 +10,7 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 
-#取消掉feeds.conf.default文件里面的helloworld的#注释
+#取消掉feeds.conf.default文件里面的helloworld的#注释,使用ShadowSocksR Plus+出国
 sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 
@@ -36,3 +36,5 @@ git clone https://github.com/lariboo/luci-app-control-weburl package/luci-app-co
 git clone https://github.com/destan19/OpenAppFilter.git package/luci-app-oaf #应用过滤
 #git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash #clash出国软件
 git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns #smartdns DNS加速
+git clone https://github.com/s1oz/luci-app-koolproxyR.git package/luci-app-koolproxyR #广告过滤
+git clone git clone https://github.com/garypang13/luci-app-eqos package/luci-app-eqos #IP地址限速
