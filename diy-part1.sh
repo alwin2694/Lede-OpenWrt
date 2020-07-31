@@ -32,6 +32,6 @@ sed -i 's#rgba(223, 56, 18, 0.04)#rgba(223, 56, 18, 0.02)#g' package/luci-theme-
 git clone https://github.com/lariboo/luci-app-control-mia package/luci-app-control-mia #时间控制
 git clone https://github.com/lariboo/luci-app-control-webrestriction package/luci-app-control-webrestriction #访问控制
 git clone https://github.com/lariboo/luci-app-control-weburl package/luci-app-control-weburl #网址过滤
-git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter #应用过滤
+git clone https://github.com/destan19/OpenAppFilter.git package/luci-app-control-OpenAppFilter #应用过滤
 git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash #clash出国软件
-git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/lede-smartdns #clash出国软件
+git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns #clash出国软件
