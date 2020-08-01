@@ -8,7 +8,7 @@
 
 
 # 修改openwrt登陆地址,把下面的192.168.2.2修改成你想要的就可以了，其他的不要动
-sed -i 's/192.168.1.1/192.168.2.2/g' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.1.1/192.168.2.2/g' package/base-files/files/bin/config_generate
 
 
 #修改内核版本（下面两行代码前面没#为4.19内核,有#为5.4内核,只选择带#或者不带#就可以了，不用改动其他）
