@@ -50,7 +50,7 @@ env:
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: diy.config
-  DIY_OP_SH: diy-part.sh
+  DIY_OP_SH: diy.sh
   SSH_ACTIONS: true
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
@@ -88,14 +88,14 @@ jobs:
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
-    - name: 加载diy-part1.sh跟feeds.conf.default设置
+    - name: 加载diy.sh跟feeds.conf.default设置
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_OP_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_OP_SH
 
-    - name: 下载diy-part.sh跟feeds.conf.default自定义软件
+    - name: 下载diy.sh跟feeds.conf.default自定义软件
       run: cd openwrt && ./scripts/feeds update -a
 
     - name: 安装自定义软件
