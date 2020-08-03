@@ -6,16 +6,16 @@
 #
 #修改openwrt登陆IP说明
 #修改登陆IP在本网站根目录 files/etc/config 文件里面的network修改
-# config interface 'lan'
-#	option type 'bridge'
-#	option ifname 'eth0' 绑定lan口几为控制口
-#	option proto 'static'
-#	option ipaddr '192.168.2.2'  登陆IP
-#	option netmask '255.255.255.0' 子掩码
-#	option gateway '192.168.2.1' openwrt连接网络的网关,我的旁路由连接的是爱快的
-#	option delegate '0' 使用不使用内置ipv6管理，不使用就不用管，使用的话，把这一行全删除
-#	option broadcast '192.168.2.255' IPv4 广播
-#	option dns '114.114.114.114 223.5.5.5' DNS，可以多个DNS，用空格分开就可以
+#config interface 'lan'
+#option type 'bridge'
+#option ifname 'eth0' 绑定lan口几为控制口
+#option proto 'static'
+#option ipaddr '192.168.2.2'  登陆IP
+#option netmask '255.255.255.0' 子掩码
+#option gateway '192.168.2.1' openwrt连接网络的网关,我的旁路由连接的是爱快的
+#option delegate '0' 使用不使用内置ipv6管理，不使用就不用管，使用的话，把这一行全删除
+#option broadcast '192.168.2.255' IPv4 广播
+#option dns '114.114.114.114 223.5.5.5' DNS，可以多个DNS，用空格分开就可以
 #
 #
 # 说明：
