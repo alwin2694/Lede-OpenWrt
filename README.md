@@ -24,7 +24,7 @@
 - [微信推送-luci-app-serverchan](https://github.com/tty228/luci-app-serverchan.git)
 - [主题-luci-theme-edge](https://github.com/garypang13/luci-theme-edge/tree/18.06)
 - [主题-luci-theme-argon](https://github.com/jerrykuku/luci-theme-argon/tree/18.06)
-- [kenzok8/插件集合](https://github.com/kenzok8/openwrt-packages.git)
+- [luci-app-adguardhome](https://github.com/rufengsuixing/luci-app-adguardhome.git)
 - [firker/多插件集合](https://github.com/firker/diy-ziyong.git)
 - [P3TERX大神一键编译脚本](https://github.com/P3TERX/Actions-OpenWrt)
 - [GitHub网站](https://github.com)
