@@ -24,7 +24,7 @@ sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default  #使用ShadowSocksR Plus+�
 
 sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings  #设置密码为空
 
-rm -rf luci-theme-argon package/lean/luci-theme-argon
+
 git clone -b 18.06 https://github.com/garypang13/luci-theme-edge package/luci-theme-edge  #主题
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon  #主题
 
