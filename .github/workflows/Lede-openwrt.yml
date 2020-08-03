@@ -13,7 +13,7 @@ name: lede-x86-64 固件
 on:
   repository_dispatch:
 
-#编辑任意指定文件触发开始编译(去掉下面5个#开启,最下面一行是指定修改什么文件就触发编译)
+#编辑任意指定文件触发开始编译(去掉下面5个#开启,最下面一行是指定修改什么文件就触发编译,我现在是修改diy.config文件触发)
 #  push:
 #    branches:
 #      - master
@@ -37,6 +37,9 @@ on:
 #  watch:
 #    types: started
   
+#开始编译后在 Actions 里面可以看到
+
+
 #说明：
 #REPO_URL: https://github.com/coolsnowwolf/lede（更换链接可以编译不一样大神的固件）
 #REPO_BRANCH: master（这个是跟上面链接相关的,有些大神是有好几个分支的,要写对相应分支才能编译到相应的固件,比如Lienol大神的就有dev-19.07跟dev-master分支,要编译什么固件就要写什么的）
