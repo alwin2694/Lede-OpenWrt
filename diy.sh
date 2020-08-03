@@ -45,8 +45,10 @@ sed -i 's#rgba(223, 56, 18, 0.04)#rgba(223, 56, 18, 0.02)#g' package/luci-theme-
 
 
 #添加自定义插件链接
+#此链接带(passwall出国软件,时间控制luci-app-timecontrol,访问控制luci-app-control-weburl,网址过滤luci-app-control-weburl)
+#sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
+
 git clone -b v1.x https://github.com/tano-systems/luci-app-tn-snmpd.git package/luci-app-tn-snmpd  #snmpd
-#sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default  #passwall出国软件
 git clone https://github.com/awesome-openwrt/luci-app-openclash package/luci-app-openclash  #openclash出国软件
 #git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash  #clash出国软件
 #git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan  #微信推送信息通知
