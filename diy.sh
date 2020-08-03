@@ -2,6 +2,22 @@
 #
 # Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
 #
+#
+#
+#修改openwrt登陆IP说明
+#修改登陆IP在本网站根目录 files/etc/config 文件里面的network修改
+# config interface 'lan'
+#	option type 'bridge'
+#	option ifname 'eth0' 绑定lan口几为控制口
+#	option proto 'static'
+#	option ipaddr '192.168.2.2'  登陆IP
+#	option netmask '255.255.255.0' 子掩码
+#	option gateway '192.168.2.1' openwrt连接网络的网关,我的旁路由连接的是爱快的
+#	option delegate '0' 使用不使用内置ipv6管理，不使用就不用管，使用的话，把这一行全删除
+#	option broadcast '192.168.2.255' IPv4 广播
+#	option dns '114.114.114.114 223.5.5.5' DNS，可以多个DNS，用空格分开就可以
+#
+#
 # 说明：
 # 除了第一行的#!/bin/bash不要动，其他的设置，前面带#表示不起作用，不带的表示起作用了
 # 有些是一行代码就起作用的，有些是两三行起作用的，我基本都把他们分开了,要他们不起作用就前面都加#,要他们起作用就把前面的#都去掉就行
