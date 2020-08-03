@@ -1,8 +1,7 @@
-﻿# Actions-OpenWrt
+# Actions-OpenWrt
 
 - 感谢coolsnowwolf/lede大神提供的源码
 - 感谢p3terx大神提供的一键编译脚本
-- 感谢KFER.Mercer大神提供的一键编译脚本
 - 感谢微软免费提供的编译平台
 - 感谢Lienol大神提供的passwall软件
 - 感谢各位大佬提供的各种各样的插件
