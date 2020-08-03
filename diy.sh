@@ -4,32 +4,18 @@
 #
 #
 #
-#修改openwrt登陆IP说明
-#修改登陆IP在本网站根目录 files/etc/config 文件里面的network修改
-#config interface 'lan'
-#option type 'bridge'
-#option ifname 'eth0' 绑定lan口几为控制口
-#option proto 'static'
-#option ipaddr '192.168.2.2'  登陆IP
-#option netmask '255.255.255.0' 子掩码
-#option gateway '192.168.2.1' openwrt连接网络的网关,我的旁路由连接的是爱快的
-#option delegate '0' 使用不使用内置ipv6管理，不使用就不用管，使用的话，把这一行全删除
-#option broadcast '192.168.2.255' IPv4 广播
-#option dns '114.114.114.114 223.5.5.5' DNS，可以多个DNS，用空格分开就可以
-#
-#
 # 说明：
 # 除了第一行的#!/bin/bash不要动，其他的设置，前面带#表示不起作用，不带的表示起作用了
 # 有些是一行代码就起作用的，有些是两三行起作用的，我基本都把他们分开了,要他们不起作用就前面都加#,要他们起作用就把前面的#都去掉就行
 
 
 # 修改openwrt登陆地址,把下面的192.168.2.2修改成你想要的就可以了，其他的不要动
-#sed -i 's/192.168.1.1/192.168.2.2/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.2.2/g' package/base-files/files/bin/config_generate
 
 
 #修改内核版本（下面两行代码前面没#为4.19内核,有#为5.4内核,只选择带#或者不带#就可以了，不用改动其他）
-#sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=4.19/g' ./target/linux/x86/Makefile  #修改内核版本
-#sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=4.19/g' ./target/linux/x86/Makefile  #修改内核版本
+sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=4.19/g' ./target/linux/x86/Makefile  #修改内核版本
+sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=4.19/g' ./target/linux/x86/Makefile  #修改内核版本
 
 
 #取消掉feeds.conf.default文件里面的helloworld的#注释
@@ -38,10 +24,9 @@ sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default  #使用ShadowSocksR Plus+�
 
 sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings  #设置密码为空
 
-
-git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge -b 18.06  #主题
-sed -i 's@background-color: #e5effd@background-color: #f8fbfe@g' package/luci-theme-edge/htdocs/luci-static/edge/cascade.css #luci-theme-edge主题颜色微调
-sed -i 's#rgba(223, 56, 18, 0.04)#rgba(223, 56, 18, 0.02)#g' package/luci-theme-edge/htdocs/luci-static/edge/cascade.css #luci-theme-edge主题颜色微调
+rm -rf luci-theme-argon package/lean/luci-theme-argon
+git clone -b 18.06 https://github.com/garypang13/luci-theme-edge package/luci-theme-edge  #主题
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon  #主题
 
 
 #添加自定义插件链接
