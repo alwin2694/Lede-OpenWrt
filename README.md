@@ -12,9 +12,7 @@
 ## 快捷链接
 
 - [coolsnowwolf/lede源码](https://github.com/coolsnowwolf/lede.git)
-- [coolsnowwolf/lede-17.1源码](https://github.com/coolsnowwolf/openwrt.git)
 - [Lienol/openwrt源码](https://github.com/Lienol/openwrt.git)
-- [openwrt/openwrt官方源码](https://github.com/openwrt/openwrt.git)
 - [Lienol/passwall](https://github.com/Lienol/openwrt-package.git)
 - [luci-app-clash](https://github.com/frainzy1477/luci-app-clash.git)
 - [Hello World](https://github.com/jerrykuku/luci-app-vssr.git)
