@@ -25,7 +25,7 @@
 - [时间控制](https://github.com/lariboo/luci-app-control-mia.git)
 - [访问控制](https://github.com/lariboo/luci-app-control-webrestriction.git)
 - [主题-edge](https://github.com/garypang13/luci-theme-edge/tree/18.06)
-- [主题](https://github.com/garypang13/luci-theme-edge/tree/18.06)
+- [主题-argon](https://github.com/jerrykuku/luci-theme-argon/tree/18.06)
 - [kenzok8/插件集合](https://github.com/kenzok8/openwrt-packages.git)
 - [firker/多插件集合](https://github.com/firker/diy-ziyong.git)
 - [P3TERX大神一键编译脚本](https://github.com/P3TERX/Actions-OpenWrt)
