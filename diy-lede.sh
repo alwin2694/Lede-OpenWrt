@@ -34,7 +34,7 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luc
 #增加了可以强制锁定暗色模式的功能，如果需要，请登录ssh 输入：touch /etc/dark 即可开启，关闭请输入：rm -rf /etc/dark，关闭后颜色模式为跟随系统
 
 
-#添加自定义插件链接
+#添加自定义插件链接（自己想要什么就github里面搜索然后添加）
 #下面第一个链接带(passwall出国软件,时间控制luci-app-timecontrol,访问控制luci-app-control-weburl,网址过滤luci-app-control-weburl)
 sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default  #(passwall,时间控制,访问控制,网址过滤)
 
