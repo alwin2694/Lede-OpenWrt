@@ -1,3 +1,15 @@
+ 注册一个github账号，然后你可以Fork我的或者P3TERX大神的脚本然后在 《.github/workflows》 里面的 （Lede-openwrt.yml） 里面多看，在diy-lede.sh看看就啥都明白了 
+ 
+ 我默认是按☆Star开始编译，开始后到 Actions 里面 点击 《lede-x86-64 固件》 ，然后左上角的 《编译OpenWrt-lede固件》 就能查看编译情况了，当然，这个是我默认设置的
+ 
+ 如果自己想修改设置编译自己喜欢的固件，就要在.github/workflows/Lede-openwrt.yml 文件里面打开SSH选项，编译的时候到了SSH那里，你就能用工具链接服务器修改你喜欢的插件或者机器类型了
+ 
+ 此一键脚本来自P3TERX大神[P3TERX大神一键编译脚本](https://github.com/P3TERX/Actions-OpenWrt)，多看看，不明白可以问我
+ 
+
+
+
+
 # Actions-OpenWrt
 
 - 感谢coolsnowwolf/lede大神提供的源码
