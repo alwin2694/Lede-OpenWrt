@@ -31,10 +31,10 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luc
 
 #添加自定义插件链接
 #下面第一个链接带(passwall出国软件,时间控制luci-app-timecontrol,访问控制luci-app-control-weburl,网址过滤luci-app-control-weburl)
-#sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default  #(passwall,时间控制,访问控制,网址过滤)
+sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default  #(passwall,时间控制,访问控制,网址过滤)
 
 git clone -b v1.x https://github.com/tano-systems/luci-app-tn-snmpd.git package/luci-app-tn-snmpd  #snmpd
-git clone https://github.com/awesome-openwrt/luci-app-openclash package/luci-app-openclash  #openclash出国软件
+#git clone https://github.com/awesome-openwrt/luci-app-openclash package/luci-app-openclash  #openclash出国软件
 #git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash  #clash出国软件
 #git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan  #微信推送信息通知
 git clone https://github.com/destan19/OpenAppFilter.git package/luci-app-oaf  #应用过滤
