@@ -35,7 +35,7 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luc
 
 #添加自定义插件链接（自己想要什么就github里面搜索然后添加）
 git clone -b v1.x https://github.com/tano-systems/luci-app-tn-snmpd.git package/luci-app-tn-snmpd  #snmpd
-git clone -b master https://github.com/vernesong/OpenClash.git package/luci-app-openclash  #openclash出国软件
+#git clone -b master https://github.com/vernesong/OpenClash.git package/luci-app-openclash  #openclash出国软件
 #git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash  #clash出国软件
 #git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan  #微信推送信息通知
 git clone https://github.com/destan19/OpenAppFilter.git package/luci-app-oaf  #应用过滤
