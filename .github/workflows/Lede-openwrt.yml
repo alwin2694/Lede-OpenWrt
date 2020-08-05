@@ -65,7 +65,7 @@ env:
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: diy.config
   DIY_OP_SH: diy-lede.sh
-  SSH_ACTIONS: true
+  SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
