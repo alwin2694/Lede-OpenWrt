@@ -27,7 +27,7 @@ sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz
 
 git clone -b 18.06 https://github.com/garypang13/luci-theme-edge package/luci-theme-edge  #主题-edge-动态登陆界面
 
-
+rm -rf ./package/lean/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon  #主题-argon-可自行修改静态和动态登陆界面
 #全新的登录界面,图片背景跟随Bing.com，每天自动切换
 #增加可自定义登录背景功能，请自行将文件上传到/www/luci-static/argon/background 目录下，支持jpg png gif格式图片，主题将会优先显示自定义背景，多个背景为随机显示，系统默认依然为从bing获取
@@ -36,10 +36,10 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luc
 
 #添加自定义插件链接（自己想要什么就github里面搜索然后添加）
 #下面第一个链接带(passwall出国软件,时间控制luci-app-timecontrol,访问控制luci-app-control-weburl,网址过滤luci-app-control-weburl)
-sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default  #(passwall,时间控制,访问控制,网址过滤)
+#sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default  #(passwall,时间控制,访问控制,网址过滤)
 
 git clone -b v1.x https://github.com/tano-systems/luci-app-tn-snmpd.git package/luci-app-tn-snmpd  #snmpd
-#git clone https://github.com/awesome-openwrt/luci-app-openclash package/luci-app-openclash  #openclash出国软件
+#git clone -b master https://github.com/vernesong/OpenClash.git package/luci-app-openclash  #openclash出国软件
 #git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash  #clash出国软件
 #git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan  #微信推送信息通知
 git clone https://github.com/destan19/OpenAppFilter.git package/luci-app-oaf  #应用过滤
