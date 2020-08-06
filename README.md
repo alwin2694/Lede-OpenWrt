@@ -29,7 +29,7 @@
 # 
 
 # 《.github/workflows》里面的脚本部分说明
-- REPO_URL:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; https://github.com/coolsnowwolf/lede（更换链接可以编译不一样大神的固件）
+- REPO_URL: https://github.com/coolsnowwolf/lede&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（更换链接可以编译不一样大神的固件）
 - REPO_BRANCH: master&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（跟上面链接对应的分支，比如Lienol大神的就有dev-19.07跟dev-master分支，要编译什么固件就要写什么的）
 - FEEDS_CONF: feeds.conf.default&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（可以在根目录创建一个feeds.conf.default文件，也是自定义插件使用，一般用不上在这里自定义插件）
 - CONFIG_FILE: diy.config&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（上面已经说清楚了）
