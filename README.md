@@ -4,9 +4,18 @@
 - 等待编译开始然后到SSH连接服务器那里，然后连接服务器修改你自己喜欢的配置或者机型
 - SSH连接到配置画面后，不懂的可以这里看看《[软路由固件openwrt编译界面设置](https://www.youtube.com/watch?v=jEE_J6-4E3Y)》，需要梯子才能观看
 
-# SSH连接说明
-首先下载，安装一个SSH工具 《[点击下载](https://www.chiark.greenend.org.uk/~sgtatham/putty/releases/0.74.html)》
+# SSH工具下载
+首先下载，安装好一个SSH工具 《[点击下载](https://www.chiark.greenend.org.uk/~sgtatham/putty/releases/0.74.html)》
 ![xm1](doc/111.png)
+
+# SSH连接说明
+![xm1](doc/01.png)
+![xm1](doc/02.png)
+![xm1](doc/03.png)
+![xm1](doc/04.png)
+![xm1](doc/05.png)
+![xm1](doc/06.png)
+![xm1](doc/07.png)
 
 
 
