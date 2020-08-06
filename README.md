@@ -6,7 +6,7 @@
 
 - 等待编译开始然后到《SSH远程连接服务器配置固件》那里，然后用putty连接服务器修改你自己喜欢的配置或者机型（有时候你网络卡了，或者网页卡了，SSH页面会展不开的，就看不到连接代码，只能点击右上角的 (Cancel workflow) 关闭编译重新再来）
 
-- SSH连接简单说明：复制代码--粘贴到putty开始连接--等待跑码完成--按Ctrl+c--输入cd openwrt && make menuconfig然后回车--等待跑码完成进入配置画面--配置完成后--Ctrl+d结束SSH连接（下面有图片说明）
+- SSH连接简单说明：复制代码--粘贴到putty开始连接--等待跑码完成--按Ctrl+c--输入cd openwrt && make menuconfig然后回车--等待跑码完成进入配置画面--配置完成后--Ctrl+d结束SSH连接（下面有工具下载跟图片说明）
 
 - SSH连接进入定制界面后，不懂的可以这里看看《[软路由固件openwrt编译界面设置](https://www.youtube.com/watch?v=jEE_J6-4E3Y)》，youtube视频，需要梯子才能观看
 
@@ -17,6 +17,15 @@
 - 虽然说用github云编译不需要梯子都可以，不过如果你要用到SSH连接的话，没有梯子是相当痛苦的，打开github网页也比较卡
 
 - 此编译脚本来自[P3TERX大神一键编译脚本](https://github.com/P3TERX/Actions-OpenWrt)，感谢P3TERX大神！！！
+
+
+# 一键编译脚本文件说明
+- 《.github/workflows》   一键编译脚本主文件就在里面，自己去看看了解
+- 《doc》   我用来存放说明图片的地方，你Fork到你仓库后，你可以自己删除里面的图片
+- 《LICENSE》   [一键编译脚本作者P3TERX](https://github.com/P3TERX/Actions-OpenWrt)法律责任说明相关
+- 《README.md》    你github相关说明，你Fork到你仓库后，你可以把里面的内容全删除了，换成你自己想写的
+- 《diy-lede.sh》    一键编译脚本的设置自定义插件文件，想增加啥插件，基本都在这里完成了
+- 《diy.config》    配置文件，你配置好了一次，编译完成后，在固件文件夹里面有一个config文件的，用记事本打开，然后把里面的内容都复制粘贴到这里，以后在不需修改任何配置的情况下，就可以把SSH连接关闭了，不需要SSH连接了，配置都是你前面设置好的，这样就可以设置定时编译了
 
 
 # SSH工具下载
@@ -32,17 +41,6 @@
 ![xm1](doc/05.png)
 ![xm1](doc/06.png)
 ![xm1](doc/07.png)
-
-
-
-# 一键编译脚本文件说明
-- 《.github/workflows》   一键编译脚本主文件就在里面，自己去看看了解
-- 《doc》   我用来存放说明图片的地方，你Fork到你仓库后，你可以自己删除里面的图片
-- 《LICENSE》   [一键编译脚本作者P3TERX](https://github.com/P3TERX/Actions-OpenWrt)法律责任说明相关
-- 《README.md》    你github相关说明，你Fork到你仓库后，你可以把里面的内容全删除了，换成你自己想写的
-- 《diy-lede.sh》    一键编译脚本的设置自定义插件文件，想增加啥插件，基本都在这里完成了
-- 《diy.config》    配置文件，你配置好了一次，编译完成后，在固件文件夹里面有一个config文件的，用记事本打开，然后把里面的内容都复制粘贴到这里，以后在不需修改任何配置的情况下，就可以把SSH连接关闭了，不需要SSH连接了，配置都是你前面设置好的，这样就可以设置定时编译了
-
 
 
 # Actions-OpenWrt
