@@ -39,7 +39,7 @@
 - UPLOAD_FIRMWARE: true（打开或者关闭上传固件到github空,跟上传BIN文件夹二选一即可,true开,false关）
 - UPLOAD_COWTRANSFER: false（打开或者关闭上传固件到奶牛网盘,true开,false关）
 - UPLOAD_WETRANSFER: false（打开或者关闭上传固件到WETRANSFER网盘,true开,false关）
-
+# 
 - 定时触发编译说明（[utc时间对照表](https://time.is/UTC)）
 - (脚本使用的是utc时间)（5组数为 分-时-日-月-周，简单说明符号《*每》《/隔》《,分别》《-至》）[想更详细的点击了解](http://linux.vbird.org/linux_basic/0430cron.php)
 - cron: 0 8 * * *              这样表示每天编译一次，编译时间为utc时间8点
