@@ -31,7 +31,6 @@ git clone -b v1.x https://github.com/tano-systems/luci-app-tn-snmpd.git package/
 git clone -b master https://github.com/vernesong/OpenClash.git package/luci-app-openclash  #openclash出国软件
 git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash  #clash出国软件
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan  #微信推送信息通知
-git clone https://github.com/s1oz/luci-app-koolproxyR.git package/luci-app-koolproxyR  #广告过滤
 git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns  #smartdns DNS加速
 git clone https://github.com/garypang13/luci-app-eqos package/luci-app-eqos  #IP地址限速
 
