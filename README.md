@@ -2,7 +2,9 @@
 - 注册一个github账号，然后你可以Fork我的脚本到你的仓库，按☆Star开始编译
 - 开始后到 Actions 里面 点击 《lede-x86-64 固件》 ，然后再点击左上角的 《编译OpenWrt-lede固件》 就能查看编译情况了
 - 等待编译开始然后到SSH连接服务器那里，然后连接服务器修改你自己喜欢的配置或者机型
-- SSH连接到配置画面后，不懂的可以这里看看《[软路由固件openwrt编译界面设置](https://www.youtube.com/watch?v=jEE_J6-4E3Y)》，需要梯子才能观看
+- SSH连接简单说明：复制代码--粘贴到putty开始连接--等待跑码完成--按Ctrl+c--输入cd openwrt && make menuconfig然后回车--等待进入配置画面（下面有图片说明）
+- SSH连接到配置画面后，不懂的可以这里看看《[软路由固件openwrt编译界面设置](https://www.youtube.com/watch?v=jEE_J6-4E3Y)》，youtube视频，需要梯子才能观看
+- 虽然说用github云编译不需要梯子都可以，不过如果你要用到SSH连接的话，没有梯子是相当痛苦的，打开github网页也比较卡
 
 # SSH工具下载
 首先下载，安装好一个SSH工具 《[点击下载](https://www.chiark.greenend.org.uk/~sgtatham/putty/releases/0.74.html)》
