@@ -40,10 +40,11 @@
 - UPLOAD_COWTRANSFER: false（打开或者关闭上传固件到奶牛网盘,true开,false关）
 - UPLOAD_WETRANSFER: false（打开或者关闭上传固件到WETRANSFER网盘,true开,false关）
 
-- 定时触发编译说明[想更详细的点击了解]()
-- (utc時間,跟中国时间相差8小时)（5组数为 分-时-日-月-周，简单说明符号《*每》《/隔》《,分别》《-至》）[想更详细的点击了解](http://linux.vbird.org/linux_basic/0430cron.php)
--   schedule:
- -    - cron: 0 8 2,6,8,30 * *
+- 定时触发编译说明（[utc时间对照表](https://time.is/UTC)）
+- (脚本使用的是utc时间)（5组数为 分-时-日-月-周，简单说明符号《*每》《/隔》《,分别》《-至》）[想更详细的点击了解](http://linux.vbird.org/linux_basic/0430cron.php)
+- cron: 0 8 * * *              这样表示每天编译一次，编译时间为utc时间8点
+- cron: 0 8 */9 * *            这样表示每隔9天编译一次，编译时间为utc时间8点
+- cron: 0 8 5,15,25 * *        这样表示每个月按你指定日期编译，现在设置的是5号-15号-25号编译，编译时间为utc时间8点
 
 
 # SSH工具下载
