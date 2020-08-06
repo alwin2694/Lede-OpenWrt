@@ -1,3 +1,6 @@
+<html>
+<body>
+    <p>
 # 编译说明
 - 注册一个github账号，然后你可以Fork我的脚本到你的仓库，按☆Star开始编译
 
@@ -74,3 +77,6 @@
 - [P3TERX大神一键编译脚本](https://github.com/P3TERX/Actions-OpenWrt)
 - [GitHub网站](https://github.com)
 
+    </p>
+</body>
+</html>
