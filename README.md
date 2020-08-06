@@ -85,7 +85,7 @@
 - [Lienol/openwrt源码](https://github.com/Lienol/openwrt.git)
 - [科学上网-Lienol/passwall](https://github.com/Lienol/openwrt-package.git)
 - [科学上网-luci-app-clash](https://github.com/frainzy1477/luci-app-clash.git)
-- [科学上网-luci-app-openclash](https://github.com/awesome-openwrt/luci-app-openclash)
+- [科学上网-luci-app-openclash](https://github.com/vernesong/OpenClash/tree/master)
 - [科学上网-ShadowSocksR Plus+](https://github.com/fw876/helloworld.git)
 - [应用过滤-luci-app-oaf](https://github.com/destan19/OpenAppFilter.git)
 - [网址过滤-luci-app-control-weburl](https://github.com/lariboo/luci-app-control-weburl.git)
