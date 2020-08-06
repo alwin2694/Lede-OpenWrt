@@ -23,10 +23,8 @@ sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default  #使用源码自带ShadowS
 sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings  #设置密码为空
 
 
-git clone -b 18.06 https://github.com/garypang13/luci-theme-edge package/luci-theme-edge  #主题-edge-动态登陆界面
-
-
 #添加自定义插件链接（自己想要什么就github里面搜索然后添加）
+git clone -b 18.06 https://github.com/garypang13/luci-theme-edge package/luci-theme-edge  #主题-edge-动态登陆界面
 git clone -b master https://github.com/vernesong/OpenClash.git package/luci-app-openclash  #openclash出国软件
 git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash  #clash出国软件
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan  #微信推送
