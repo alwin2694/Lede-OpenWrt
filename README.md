@@ -40,7 +40,7 @@
 - UPLOAD_COWTRANSFER: false（打开或者关闭上传固件到奶牛网盘,true开,false关）
 - UPLOAD_WETRANSFER: false（打开或者关闭上传固件到WETRANSFER网盘,true开,false关）
 
-- 定时触发编译说明
+- 定时触发编译说明[想更详细的点击了解]()
 - (utc時間,跟中国时间相差8小时)（5组数为 分-时-日-月-周，简单说明符号《*每》《/隔》《,分别》《-至》）[想更详细的点击了解](http://linux.vbird.org/linux_basic/0430cron.php)
 -   schedule:
  -    - cron: 0 8 2,6,8,30 * *
