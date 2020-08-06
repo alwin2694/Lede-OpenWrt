@@ -14,9 +14,9 @@
 
 # SSH连接说明
 ![xm1](doc/01.png)
-![xm1](doc/021.png)
+![xm1](doc/02.png)
 ![xm1](doc/03.png)
-![xm1](doc/041.png)
+![xm1](doc/04.png)
 ![xm1](doc/05.png)
 ![xm1](doc/06.png)
 ![xm1](doc/07.png)
