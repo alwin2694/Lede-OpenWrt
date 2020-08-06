@@ -6,6 +6,7 @@
 - SSH连接到配置画面后，不懂的可以这里看看《[软路由固件openwrt编译界面设置](https://www.youtube.com/watch?v=jEE_J6-4E3Y)》，youtube视频，需要梯子才能观看
 - 编译完成后，按 Actions 就能看到你编译完成的固件，点击一下就下载到你电脑了
 - 虽然说用github云编译不需要梯子都可以，不过如果你要用到SSH连接的话，没有梯子是相当痛苦的，打开github网页也比较卡
+- 此编译脚本来自[P3TERX大神一键编译脚本](https://github.com/P3TERX/Actions-OpenWrt)，感谢P3TERX大神！！！
 
 # SSH工具下载
 - 首先下载，安装好一个SSH工具 《[点击下载putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/releases/0.74.html)》
