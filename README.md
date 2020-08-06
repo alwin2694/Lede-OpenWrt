@@ -19,13 +19,26 @@
 - 此编译脚本来自[P3TERX大神一键编译脚本](https://github.com/P3TERX/Actions-OpenWrt)，感谢P3TERX大神！！！
 
 
-# 一键编译脚本文件说明
+# 一键编译脚本根目录文件说明
 - 《.github/workflows》   一键编译脚本主文件就在里面，自己去看看了解（里面的文件可以随便改名字，保持.yml格式就可以了，.yml文件里面的中文也随便改，带#号的说明看不顺眼就都删除了）
 - 《doc》   我用来存放说明图片的地方，你把我的脚本Fork到你仓库后，你可以自己删除里面的图片
 - 《LICENSE》   [一键编译脚本作者P3TERX](https://github.com/P3TERX/Actions-OpenWrt)法律责任说明相关
 - 《README.md》    你的github相关说明，你把我的脚本Fork到你仓库后，你可以把里面的内容全删除了，换成你自己想写的
 - 《diy-lede.sh》    一键编译脚本的设置自定义插件文件，想增加啥插件，基本都在这里完成了（文件名字可以随便改，保持.sh格式就可以，还要在《.github/workflows》里面主文件修改好对应的名字 ）
 - 《diy.config》    配置文件，你配置好了一次，编译完成后，在固件文件夹里面有一个config.buildinfo文件的，用记事本打开，然后把里面的内容都复制粘贴到这里，以后在不需修改任何配置的情况下，就可以把SSH连接关闭了，不需要SSH连接了，配置都是你前面设置好的，这样就可以设置定时编译了（文件名字可以随便改，保持.config格式就好了，还要在《.github/workflows》里面主文件修改好对应的名字）
+
+
+# 《.github/workflows》里面的脚本部分说明
+- REPO_URL: https://github.com/coolsnowwolf/lede（更换链接可以编译不一样大神的固件）
+- REPO_BRANCH: master（跟上面链接对应的分支，比如Lienol大神的就有dev-19.07跟dev-master分支，要编译什么固件就要写什么的）
+- FEEDS_CONF: feeds.conf.default（可以在根目录创建一个feeds.conf.default文件，也是自定义插件使用，一般用不上在这里自定义插件）
+- CONFIG_FILE: diy.config（上面已经说清楚了）
+- DIY_P1_SH: diy-lede.sh（上面已经说清楚了）
+- SSH_ACTIONS: true（打开或者关闭SSH远程连接服务，true开,false关）
+- UPLOAD_BIN_DIR: false（打开或者关闭上传整个BIN文件夹到github空,里面包含固件+IPK在里面,跟上传固件二选一即可,true开,false关）
+- UPLOAD_FIRMWARE: true（打开或者关闭上传固件到github空,跟上传BIN文件夹二选一即可,true开,false关）
+- UPLOAD_COWTRANSFER: false（打开或者关闭上传固件到奶牛网盘,true开,false关）
+- UPLOAD_WETRANSFER: false（打开或者关闭上传固件到WETRANSFER网盘,true开,false关）
 
 
 # SSH工具下载
@@ -42,18 +55,6 @@
 ![xm1](doc/06.png)
 ![xm1](doc/07.png)
 
-#《.github/workflows》里面的脚本部分说明
-- 说明：
-- REPO_URL: https://github.com/coolsnowwolf/lede（更换链接可以编译不一样大神的固件）
-- REPO_BRANCH: master（这个是跟上面链接相关的,有些大神是有好几个分支的,要写对相应分支才能编译到相应的固件,比如Lienol大神的就有dev-19.07跟dev-master分支,要编译什么固件就要写什么的）
-- FEEDS_CONF: feeds.conf.default（源码自带的自定义增加插件文件,一般用不上在这里自定义插件）
-- CONFIG_FILE: diy.config（固件所有设置和插件都在这里,第一次编译要打开ssh连接服务器自己修改下自己想要的什么样固件,编译完成后文件夹里面带一个.config文件的，把它内容复制到这里,以后编译不修改固件的情况下就可以关闭ssh,达到无人值守自动编译固件了）
-- DIY_P1_SH: diy-lede.sh（自定义增加插件文件,基本整个源代码好多都可以改,只要你会就可以了）
-- SSH_ACTIONS: true（打开或者关闭SSH远程连接服务器修改需要的插件和配置固件，true开,false关）
-- UPLOAD_BIN_DIR: false（打开或者关闭上传整个BIN文件夹到github空,里面包含固件+IPK在里面,跟上传固件二选一即可,true开,false关）
-- UPLOAD_FIRMWARE: true（打开或者关闭上传固件到github空,跟上传BIN文件夹二选一即可,true开,false关）
-- UPLOAD_COWTRANSFER: false（打开或者关闭上传固件到奶牛网盘,true开,false关）
-- UPLOAD_WETRANSFER: false（打开或者关闭上传固件到WETRANSFER网盘,true开,false关）
 
 # Actions-OpenWrt
 
