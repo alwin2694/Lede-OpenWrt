@@ -18,7 +18,7 @@ sed -i 's/192.168.1.1/192.168.2.2/g' package/base-files/files/bin/config_generat
 
 
 #取消掉feeds.conf.default文件里面的helloworld的#注释
-sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default  #使用ShadowSocksR Plus+出国软件
+sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default  #使用源码自带ShadowSocksR Plus+出国软件
 
 
 sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings  #设置密码为空
@@ -26,26 +26,21 @@ sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz
 
 git clone -b 18.06 https://github.com/garypang13/luci-theme-edge package/luci-theme-edge  #主题-edge-动态登陆界面
 
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon  #主题-argon-可自行修改静态和动态登陆界面
-#全新的登录界面,图片背景跟随Bing.com，每天自动切换
-#增加可自定义登录背景功能，请自行将文件上传到/www/luci-static/argon/background 目录下，支持jpg png gif格式图片，主题将会优先显示自定义背景，多个背景为随机显示，系统默认依然为从bing获取
-#增加了可以强制锁定暗色模式的功能，如果需要，请登录ssh 输入：touch /etc/dark 即可开启，关闭请输入：rm -rf /etc/dark，关闭后颜色模式为跟随系统
-
 
 #添加自定义插件链接（自己想要什么就github里面搜索然后添加）
 git clone -b v1.x https://github.com/tano-systems/luci-app-tn-snmpd.git package/luci-app-tn-snmpd  #snmpd
 #git clone -b master https://github.com/vernesong/OpenClash.git package/luci-app-openclash  #openclash出国软件
 #git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash  #clash出国软件
 #git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan  #微信推送信息通知
-git clone https://github.com/destan19/OpenAppFilter.git package/luci-app-oaf  #应用过滤
 #git clone https://github.com/s1oz/luci-app-koolproxyR.git package/luci-app-koolproxyR  #广告过滤
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns  #smartdns DNS加速
 #git clone https://github.com/garypang13/luci-app-eqos package/luci-app-eqos  #IP地址限速
+git clone https://github.com/destan19/OpenAppFilter.git package/luci-app-oaf  #应用过滤（在编译好的固件的-网络-里面）
 #git clone https://github.com/lariboo/luci-app-control-mia package/luci-app-control-mia  #时间控制
 #git clone https://github.com/lariboo/luci-app-control-weburl package/luci-app-control-weburl  #网址过滤
 #git clone https://github.com/lariboo/luci-app-control-webrestriction package/luci-app-control-webrestriction  #访问控制
 
-#passwall出国软件
+#passwall出国软件（以下7行都是）
 svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-passwall package/luci-app-passwall
 svn co https://github.com/Lienol/openwrt-package/trunk/package/brook package/brook
 svn co https://github.com/Lienol/openwrt-package/trunk/package/chinadns-ng package/chinadns-ng
@@ -53,3 +48,11 @@ svn co https://github.com/Lienol/openwrt-package/trunk/package/tcping package/tc
 svn co https://github.com/Lienol/openwrt-package/trunk/package/trojan-go package/trojan-go
 svn co https://github.com/Lienol/openwrt-package/trunk/package/trojan-plus package/trojan-plus
 svn co https://github.com/Lienol/openwrt-package/trunk/package/syncthing package/syncthing
+
+
+#luci-app-jd-dailybonus[京东签到]，luci-app-vssr [Hello World-出国软件]，luci-theme-argon-18.06[argon-主题]
+sed -i '$a src-git jerryk https://github.com/jerrykuku/openwrt-package' feeds.conf.default
+
+#全新的[argon-主题]登录界面,图片背景跟随Bing.com，每天自动切换
+#增加可自定义登录背景功能，请自行将文件上传到/www/luci-static/argon/background 目录下，支持jpg png gif格式图片，主题将会优先显示自定义背景，多个背景为随机显示，系统默认依然为从bing获取
+#增加了可以强制锁定暗色模式的功能，如果需要，请登录ssh 输入：touch /etc/dark 即可开启，关闭请输入：rm -rf /etc/dark，关闭后颜色模式为跟随系统
