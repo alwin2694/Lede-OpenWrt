@@ -17,7 +17,7 @@
 - 虽然说用github云编译不需要梯子都可以，不过如果你要用到SSH连接的话，没有梯子是相当痛苦的，下载固件慢，打开github网页也比较卡
 
 - 此编译脚本来自[P3TERX大神一键编译脚本](https://github.com/P3TERX/Actions-OpenWrt)，感谢P3TERX大神！！！
-
+# 
 
 # 一键编译脚本根目录文件说明
 - 《.github/workflows》   一键编译脚本主文件就在里面，自己去看看了解（里面的文件可以随便改名字，保持.yml格式就可以了，.yml文件里面的中文也随便改，带#号的说明看不顺眼就都删除了）
@@ -26,7 +26,7 @@
 - 《README.md》    你的github相关说明，你把我的脚本Fork到你仓库后，你可以把里面的内容全删除了，换成你自己想写的
 - 《diy-lede.sh》    一键编译脚本的设置自定义插件文件，想增加啥插件，基本都在这里完成了（文件名字可以随便改，保持.sh格式就可以，还要在《.github/workflows》里面主文件修改好对应的名字 ）
 - 《diy.config》    配置文件，你配置好了一次，编译完成后，在固件文件夹里面有一个config.buildinfo文件的，用记事本打开，然后把里面的内容都复制粘贴到这里，以后在不需修改任何配置的情况下，就可以把SSH连接关闭了，不需要SSH连接了，配置都是你前面设置好的，这样就可以设置定时编译了（文件名字可以随便改，保持.config格式就好了，还要在《.github/workflows》里面主文件修改好对应的名字）
-
+# 
 
 # 《.github/workflows》里面的脚本部分说明
 - REPO_URL: https://github.com/coolsnowwolf/lede（更换链接可以编译不一样大神的固件）
@@ -45,13 +45,13 @@
 - cron: 0 8 * * *              这样表示每天编译一次，编译时间为utc时间8点
 - cron: 0 8 */9 * *            这样表示每隔9天编译一次，编译时间为utc时间8点
 - cron: 0 8 5,15,25 * *        这样表示每个月按你指定日期编译，现在设置的是5号-15号-25号编译，编译时间为utc时间8点
-
+# 
 
 # SSH工具下载
 - 首先下载，安装好一个SSH工具 《[点击下载putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/releases/0.74.html)》
 ![xm1](doc/111.png)
 
-
+# 
 # SSH连接说明
 ![xm1](doc/01.png)
 ![xm1](doc/02.png)
@@ -61,7 +61,7 @@
 ![xm1](doc/06.png)
 ![xm1](doc/07.png)
 
-
+# 
 # Actions-OpenWrt
 
 - 感谢coolsnowwolf/lede大神提供的源码
@@ -72,7 +72,7 @@
 - 感谢各位帮助过我的人，祝福各位好人一生平安
 
 
-
+# 
 ## 快捷链接
 
 - [coolsnowwolf/lede源码](https://github.com/coolsnowwolf/lede.git)
