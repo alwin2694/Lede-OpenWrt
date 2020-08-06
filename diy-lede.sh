@@ -1,7 +1,6 @@
 #!/bin/bash
 cd openwrt
 rm -rf package/lean/luci-theme-argon
-rm -rf package/lean/luci-app-accesscontrol
 # Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
 #
 # 说明：
@@ -35,10 +34,7 @@ git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverc
 git clone https://github.com/s1oz/luci-app-koolproxyR.git package/luci-app-koolproxyR  #广告过滤
 git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns  #smartdns DNS加速
 git clone https://github.com/garypang13/luci-app-eqos package/luci-app-eqos  #IP地址限速
-git clone https://github.com/destan19/OpenAppFilter.git package/luci-app-oaf  #应用过滤（在编译好的固件的-网络-里面）
-git clone https://github.com/lariboo/luci-app-control-mia package/luci-app-control-mia  #时间控制
-git clone https://github.com/lariboo/luci-app-control-weburl package/luci-app-control-weburl  #网址过滤
-git clone https://github.com/lariboo/luci-app-control-webrestriction package/luci-app-control-webrestriction  #访问控制
+
 
 #passwall出国软件
 svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-passwall package/luci-app-passwall
@@ -50,7 +46,7 @@ svn co https://github.com/Lienol/openwrt-package/trunk/package/trojan-plus packa
 svn co https://github.com/Lienol/openwrt-package/trunk/package/syncthing package/syncthing
 
 
-#luci-app-jd-dailybonus[京东签到]，luci-app-vssr [Hello World-出国软件]，luci-theme-argon-18.06[argon-主题]
+#luci-app-jd-dailybonus[京东签到]，luci-app-vssr [Hello World-出国软件-经常加载不了节点]，luci-theme-argon-18.06[argon-主题]
 sed -i '$a src-git jerryk https://github.com/jerrykuku/openwrt-package' feeds.conf.default
 
 #全新的[argon-主题]登录界面,图片背景跟随Bing.com，每天自动切换
