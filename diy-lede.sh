@@ -40,7 +40,7 @@ git clone https://github.com/lariboo/luci-app-control-mia package/luci-app-contr
 git clone https://github.com/lariboo/luci-app-control-weburl package/luci-app-control-weburl  #网址过滤
 git clone https://github.com/lariboo/luci-app-control-webrestriction package/luci-app-control-webrestriction  #访问控制
 
-#passwall出国软件（以下7行都是）
+#passwall出国软件
 svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-passwall package/luci-app-passwall
 svn co https://github.com/Lienol/openwrt-package/trunk/package/brook package/brook
 svn co https://github.com/Lienol/openwrt-package/trunk/package/chinadns-ng package/chinadns-ng
