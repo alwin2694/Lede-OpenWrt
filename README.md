@@ -35,7 +35,7 @@
 - REPO_BRANCH: master&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（跟上面链接对应的分支，比如Lienol大神的就有dev-19.07跟dev-master分支，要编译什么固件就要写什么的）
 - FEEDS_CONF: feeds.conf.default&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（可以在根目录创建一个feeds.conf.default文件，也是自定义插件使用，一般用不上在这里自定义插件）
 - CONFIG_FILE: diy.config&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（上面已经说清楚了）
-- DIY_P1_SH: diy-lede.sh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（上面已经说清楚了）
+- DIY_OP_SH: diy-lede.sh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（上面已经说清楚了）
 - SSH_ACTIONS: true&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（打开或者关闭SSH远程连接服务，true开,false关）
 - UPLOAD_BIN_DIR: false&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（打开或者关闭上传整个BIN文件夹到github空,里面包含固件+IPK在里面,跟上传固件二选一即可,true开,false关）
 - UPLOAD_FIRMWARE: true&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（打开或者关闭上传固件到github空,跟上传BIN文件夹二选一即可,true开,false关）
