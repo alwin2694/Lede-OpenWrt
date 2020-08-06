@@ -7,7 +7,7 @@
 - 虽然说用github云编译不需要梯子都可以，不过如果你要用到SSH连接的话，没有梯子是相当痛苦的，打开github网页也比较卡
 
 # SSH工具下载
-首先下载，安装好一个SSH工具 《[点击下载](https://www.chiark.greenend.org.uk/~sgtatham/putty/releases/0.74.html)》
+首先下载，安装好一个SSH工具 《[点击下载putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/releases/0.74.html)》
 ![xm1](doc/111.png)
 
 # SSH连接说明
