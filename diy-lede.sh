@@ -11,7 +11,7 @@ rm -rf package/lean/luci-theme-argon
 sed -i 's/192.168.1.1/192.168.2.2/g' package/base-files/files/bin/config_generate
 
 
-#修改内核版本（下面两行代码前面有#为源码默认最新5.4内核,没#为4.19内核,,只选择带#或者不带#就可以了，不用改动其他）
+#修改内核版本（下面两行代码前面有#为源码默认最新5.4内核,没#为4.19内核,默认修改X86的，其他机型L大那里target/linux查看，对应修改下面的路径就好）
 #sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=4.19/g' ./target/linux/x86/Makefile  #修改内核版本
 #sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=4.19/g' ./target/linux/x86/Makefile  #修改内核版本
 
