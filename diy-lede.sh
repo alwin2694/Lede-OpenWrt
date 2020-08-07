@@ -41,7 +41,7 @@ svn co https://github.com/Lienol/openwrt-package/trunk/package/trojan-plus packa
 svn co https://github.com/Lienol/openwrt-package/trunk/package/syncthing package/syncthing
 
 
-#luci-app-jd-dailybonus[京东签到]，luci-app-vssr [Hello World-出国软件-经常加载不了节点]，luci-theme-argon-18.06[argon-主题]
+#luci-app-jd-dailybonus[京东签到]，luci-app-vssr [Hello World-出国软件-经常订阅不了节点，不知何解]，luci-theme-argon-18.06[argon-主题]
 sed -i '$a src-git jerryk https://github.com/jerrykuku/openwrt-package' feeds.conf.default
 
 #全新的[argon-主题]登录界面,图片背景跟随Bing.com，每天自动切换
