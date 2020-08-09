@@ -32,13 +32,13 @@ git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-a
 
 
 #passwall出国软件
-svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-passwall package/luci-app-passwall
-svn co https://github.com/Lienol/openwrt-package/trunk/package/brook package/brook
-svn co https://github.com/Lienol/openwrt-package/trunk/package/chinadns-ng package/chinadns-ng
-svn co https://github.com/Lienol/openwrt-package/trunk/package/tcping package/tcping
-svn co https://github.com/Lienol/openwrt-package/trunk/package/trojan-go package/trojan-go
-svn co https://github.com/Lienol/openwrt-package/trunk/package/trojan-plus package/trojan-plus
-svn co https://github.com/Lienol/openwrt-package/trunk/package/syncthing package/syncthing
+svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-passwall package/luci-app-passwall
+svn co https://github.com/xiaorouji/openwrt-package/trunk/package/brook package/brook
+svn co https://github.com/xiaorouji/openwrt-package/trunk/package/chinadns-ng package/chinadns-ng
+svn co https://github.com/xiaorouji/openwrt-package/trunk/package/tcping package/tcping
+svn co https://github.com/xiaorouji/openwrt-package/trunk/package/trojan-go package/trojan-go
+svn co https://github.com/xiaorouji/openwrt-package/trunk/package/trojan-plus package/trojan-plus
+svn co https://github.com/xiaorouji/openwrt-package/trunk/package/syncthing package/syncthing
 
 
 #luci-app-jd-dailybonus[京东签到]，luci-app-vssr [Hello World-出国软件-经常订阅不了节点，不知何解]，luci-theme-argon-18.06[argon-主题]
