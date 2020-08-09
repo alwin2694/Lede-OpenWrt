@@ -8,7 +8,7 @@
 #
 - SSH连接简单说明：复制代码--粘贴到putty开始连接--等待跑码完成--按Ctrl+c--输入cd openwrt && make menuconfig然后回车--等待跑码完成进入配置画面--配置完成后--Ctrl+d结束SSH连接（下面有工具下载跟图片说明）
 #
-- SSH连接进入定制界面后，不懂的可以这里看看《[软路由固件openwrt编译界面设置](https://www.youtube.com/watch?v=jEE_J6-4E3Y)》，youtube视频，需要梯子才能观看
+- SSH连接进入定制界面后，不懂的可以这里看看《[软路由固件openwrt编译界面设置](https://www.youtube.com/watch?v=jEE_J6-4E3Y)》，youtube里大神的视频，需要梯子才能观看
 #
 - 进入定制界面后各种插件所对应的中文名字不懂的可以到这里《[插件名字中文对照说明](https://www.right.com.cn/forum/thread-3682029-1-1.html)》参考下，这个是恩山大神xtwz整理的，更新比较老，有个别没有的，参考看吧
 #
