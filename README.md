@@ -56,7 +56,7 @@
 - (脚本使用的是utc时间)（5组数为 分-时-日-月-周，简单说明符号《*每》《/隔》《,分别》《-至》）[点击了解](http://linux.vbird.org/linux_basic/0430cron.php)
 - cron: 30 8 * * *              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这样表示每天编译一次，编译时间为utc时间8点30分开始
 - cron: 30 8 */9 * *            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这样表示每隔9天编译一次，编译时间为utc时间8点30分开始
-- cron: 30 8 5,15,25 * *        &nbsp;&nbsp;&nbsp;&nbsp;这样表示每个月按你指定日期编译，现在设置的是5号-15号-25号编译，可设置N天，编译时间为utc时间8点30分开始
+- cron: 30 8 5,15,25 * *        &nbsp;&nbsp;&nbsp;&nbsp;这样表示每个月按你指定日期编译，现设的是5号-15号-25号编译，可设N天，编译时间为utc时间8点30分开始
 - cron: 30 8 1-10 * *            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这样表示每个月1至10号的每天编译一次，编译时间为utc时间8点30分开始
 # 
 
