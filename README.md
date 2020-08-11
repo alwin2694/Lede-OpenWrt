@@ -16,7 +16,7 @@
 #
 - 编译完成后,固件包的体质X2再除1024就等于在github上的显示。比如说你选择编译的固件格式比较多，编译后为800M，800*2/1024=1.5G
 #
-- 安装固件时出现“Please press Enter to activate this console”就表示安装好了，不会跑码的，稍等1分钟就可以进入了
+- 安装固件时出现“Please press Enter to activate this console”就表示安装好了，不会跑码的，稍等1分钟就可以进入网页了
 #
 - 虽然说用github云编译不需要梯子都可以，不过如果你要用到SSH连接的话，没有梯子是相当痛苦的，下载固件慢，打开github网页也比较卡
 #
