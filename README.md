@@ -14,7 +14,7 @@
 #
 - 编译完成后，点击 Actions 就能看到你编译完成的固件，点击一下固件名字就下载到你电脑了
 #
-- 编译完成后,固件包的体质X2再除1024就等于在github上的显示。比如说你选择编译的固件格式比较多，编译后为800M，800*2/1024=1.5G
+- 编译完成后,固件体积乘2再除1024就等于在github上的显示。比如说你选择编译的固件安装格式比较多，编译后为800M，800*2/1024=1.5G
 #
 - 安装固件时出现“Please press Enter to activate this console”就表示安装好了，不会跑码的，稍等1分钟就可以进入网页了
 #
@@ -92,8 +92,8 @@
 ## 快捷链接
 
 - [coolsnowwolf/lede源码](https://github.com/coolsnowwolf/lede.git)
-- [Lienol/openwrt源码](https://github.com/xiaorouji/openwrt-package.git)
-- [科学上网-Lienol/passwall](https://github.com/Lienol/openwrt-package.git)
+- [Lienol/openwrt源码](https://github.com/Lienol/openwrt.git)
+- [科学上网-Lienol/passwall](https://github.com/xiaorouji/openwrt-package.git)
 - [科学上网-luci-app-clash](https://github.com/frainzy1477/luci-app-clash.git)
 - [科学上网-luci-app-openclash](https://github.com/vernesong/OpenClash/tree/master)
 - [科学上网-ShadowSocksR Plus+](https://github.com/fw876/helloworld.git)
