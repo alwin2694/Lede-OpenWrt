@@ -8,7 +8,7 @@
 #修改以下代码或者开启触发开关都好，要严格按格式对好,前面有多少空格也要看清楚
 #
 
-name: lede-x86-64 固件
+name: Lede-OpenWrt 固件
 
 on:
   repository_dispatch:
